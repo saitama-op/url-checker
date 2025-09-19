@@ -37,10 +37,11 @@ http://example.com
 
 ## ⚡ Example Output
 ```
+PS C:\Gitbase\url-checker> go run .\main.go
 [200] https://google.com ✅ UP
 [200] https://github.com ✅ UP
-[404] http://example.com/missing ❌ DOWN
-[ERR] https://nonexistent-website-12345.com ❌ DOWN (lookup failed)
+[ERR] https://nonexistent-website-12345.com ❌ DOWN (Get "https://nonexistent-website-12345.com": dial tcp: lookup nonexistent-website-12345.com: no such host)
+[200] http://example.com ✅ UP
 ```
 
 ---
