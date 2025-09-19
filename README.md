@@ -38,12 +38,15 @@ http://example.com
 
 ## ⚡ Example Output
 ```
-URL                                               Status   Code   Error
+PS C:\Gitbase\url-checker> go run .\main.go -json="result.json"
+URL                                                Status   Code   Error
 ------------------------------------------------------------------------------------------
-https://nonexistent-website-12345.com           DOWN     0      dial tcp: lookup failed
-http://example.com/missing                        DOWN     404    
-https://google.com                                UP       200    
-https://github.com                                UP       200    
+https://nonexistent-website-12345.com              DOWN     0      Get "https://nonexistent-website-12345.com": dial tcp: lookup nonexistent-website-12345.com: no such host
+http://example.com                                 UP       200
+https://github.com                                 UP       200
+https://google.com                                 UP       200
+Results saved to results.csv
+Results saved to result.json 
 ```
 <img width="1892" height="252" alt="image" src="https://github.com/user-attachments/assets/187fd404-f990-4e46-9c8a-7a89d6213487" />
 
