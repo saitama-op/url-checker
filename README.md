@@ -59,7 +59,7 @@ Results saved to result.json
 
 ### Clone the repo
 ```bash
-git clone https://github.com/your-username/url-checker.git
+git clone https://github.com/saitma-op/url-checker.git
 cd url-checker
 ```
 
