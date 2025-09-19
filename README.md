@@ -45,6 +45,7 @@ http://example.com/missing                        DOWN     404
 https://google.com                                UP       200    
 https://github.com                                UP       200    
 ```
+<img width="1892" height="252" alt="image" src="https://github.com/user-attachments/assets/187fd404-f990-4e46-9c8a-7a89d6213487" />
 
 ---
 
