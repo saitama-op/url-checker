@@ -1,0 +1,5 @@
+URL,Status,Code,Error
+https://nonexistent-website-12345.com,DOWN,0,"Get ""https://nonexistent-website-12345.com"": dial tcp: lookup nonexistent-website-12345.com: no such host"
+http://example.com,UP,200,
+https://github.com,UP,200,
+https://google.com,UP,200,

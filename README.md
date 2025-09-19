@@ -1,16 +1,17 @@
-# 🌐 URL Status Checker (Go)
+# 🌐 URL Status Checker (Go) with Concurrency, CSV & JSON Export
 
-A simple tool written in **Go** to check whether a list of URLs are **UP** or **DOWN**.  
-Reads URLs from a file (`urls.txt`) and performs HTTP GET requests to report status.  
+A robust tool written in **Go** to check whether a list of URLs are **UP** or **DOWN**, using a configurable worker pool for concurrency and exporting results to CSV and JSON.  
 
 ---
 
 ## 🚀 Features
-- Reads URLs from `urls.txt`  
+- Reads URLs from a file (`urls.txt`)  
 - Checks status with HTTP GET requests  
+- Worker pool for safe concurrency  
 - Reports status codes (`200 OK`, `404 Not Found`, etc.)  
-- Handles timeouts for slow sites  
-- Simple and lightweight  
+- Failed URLs appear first in the tabular output  
+- Colorized console output (Red=DOWN, Green=UP)  
+- Exports results to CSV and optional JSON  
 
 ---
 
@@ -37,11 +38,12 @@ http://example.com
 
 ## ⚡ Example Output
 ```
-PS C:\Gitbase\url-checker> go run .\main.go
-[200] https://google.com ✅ UP
-[200] https://github.com ✅ UP
-[ERR] https://nonexistent-website-12345.com ❌ DOWN (Get "https://nonexistent-website-12345.com": dial tcp: lookup nonexistent-website-12345.com: no such host)
-[200] http://example.com ✅ UP
+URL                                               Status   Code   Error
+------------------------------------------------------------------------------------------
+https://nonexistent-website-12345.com           DOWN     0      dial tcp: lookup failed
+http://example.com/missing                        DOWN     404    
+https://google.com                                UP       200    
+https://github.com                                UP       200    
 ```
 
 ---
@@ -64,21 +66,33 @@ go mod tidy
 go run main.go
 ```
 
----
+### Command-line flags
+- `-workers` : Number of concurrent workers (default 20)  
+- `-file`    : File containing URLs (default `urls.txt`)  
+- `-csv`     : CSV output file (default `results.csv`)  
+- `-json`    : Optional JSON output file  
 
-## 📦 Build Executable
+#### Examples
 ```bash
-go build -o urlchecker
-./urlchecker
+# Default workers and CSV
+go run main.go
+
+# Custom workers and CSV
+go run main.go -workers=50 -csv=myresults.csv
+
+# Export to JSON
+go run main.go -json=results.json
+
+# Custom URL file + JSON + CSV
+go run main.go -file=myurls.txt -workers=30 -csv=output.csv -json=output.json
 ```
 
 ---
 
 ## 🧑‍💻 Future Improvements
-- Add concurrency (check multiple URLs in parallel)  
-- Export results to JSON or CSV  
-- Add colorized output for readability  
-- Dockerize for easy deployment  
+- Colorized console output (already implemented)  
+- Dockerize for deployment  
+- Integrate with monitoring systems for automated alerts  
 
 ---
 

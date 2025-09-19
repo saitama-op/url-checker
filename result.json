@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://nonexistent-website-12345.com",
+    "status": "DOWN",
+    "code": 0,
+    "error": "Get \"https://nonexistent-website-12345.com\": dial tcp: lookup nonexistent-website-12345.com: no such host"
+  },
+  {
+    "url": "http://example.com",
+    "status": "UP",
+    "code": 200
+  },
+  {
+    "url": "https://github.com",
+    "status": "UP",
+    "code": 200
+  },
+  {
+    "url": "https://google.com",
+    "status": "UP",
+    "code": 200
+  }
+]
