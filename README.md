@@ -48,8 +48,10 @@ https://google.com                                 UP       200
 Results saved to results.csv
 Results saved to result.json 
 ```
-   image of colored output is displayed below
-<img width="1892" height="252" alt="image" src="https://github.com/user-attachments/assets/187fd404-f990-4e46-9c8a-7a89d6213487" />
+### Example Colored Output
+
+![Colored URL Output](https://github.com/user-attachments/assets/187fd404-f990-4e46-9c8a-7a89d6213487)
+
 
 ---
 
