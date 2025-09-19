@@ -1,0 +1,4 @@
+https://google.com
+https://github.com
+https://nonexistent-website-12345.com
+http://example.com
